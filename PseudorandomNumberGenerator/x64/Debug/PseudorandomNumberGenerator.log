@@ -1,0 +1,12 @@
+﻿  Generator.cpp
+C:\STUDIA\SMIECI\metody programowania\lab8\PseudorandomNumberGenerator\PseudorandomNumberGenerator\Generator.cpp(90,16): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
+C:\STUDIA\SMIECI\metody programowania\lab8\PseudorandomNumberGenerator\PseudorandomNumberGenerator\Generator.cpp(131,14): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
+C:\STUDIA\SMIECI\metody programowania\lab8\PseudorandomNumberGenerator\PseudorandomNumberGenerator\Generator.cpp(187,58): warning C4267: "argument": konwersja z "size_t" do "int", możliwa utrata danych
+C:\STUDIA\SMIECI\metody programowania\lab8\PseudorandomNumberGenerator\PseudorandomNumberGenerator\Generator.cpp(189,58): warning C4267: "argument": konwersja z "size_t" do "int", możliwa utrata danych
+C:\STUDIA\SMIECI\metody programowania\lab8\PseudorandomNumberGenerator\PseudorandomNumberGenerator\Generator.cpp(195,39): warning C4267: "=": konwersja z "size_t" do "int", możliwa utrata danych
+C:\STUDIA\SMIECI\metody programowania\lab8\PseudorandomNumberGenerator\PseudorandomNumberGenerator\Generator.cpp(197,39): warning C4267: "=": konwersja z "size_t" do "int", możliwa utrata danych
+  OtherFunctions.cpp
+  PseudorandomNumberGenerator.cpp
+C:\STUDIA\SMIECI\metody programowania\lab8\PseudorandomNumberGenerator\PseudorandomNumberGenerator\PseudorandomNumberGenerator.cpp(33,61): warning C4267: "argument": konwersja z "size_t" do "int", możliwa utrata danych
+  Generowanie kodu...
+  PseudorandomNumberGenerator.vcxproj -> C:\STUDIA\SMIECI\metody programowania\lab8\PseudorandomNumberGenerator\x64\Debug\PseudorandomNumberGenerator.exe
