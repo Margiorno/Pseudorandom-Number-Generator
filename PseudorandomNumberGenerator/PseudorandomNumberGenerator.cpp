@@ -196,7 +196,6 @@ public:
         {
             std::cout << generated_numbers[i] << std::endl;
         }
-        std::cout << std::endl;
     }
 
     void f_saveGeneratedNumbersInFile()
@@ -248,17 +247,51 @@ public:
 
 RandomNumberGenerator RandomNumberGenerator::generator;
 
+class Menu
+{
+private:
+    std::vector<std::pair<std::string, std::function<void()>>> MenuOptions;
+    std::string title;
+public:
+    Menu(std::string menuTitle) : title(menuTitle) {};
+    void f_addMenuOption(std::string actionTitle, std::function<void()> action)
+    {
+        MenuOptions.push_back({ actionTitle, action });
+    }
+    void f_displayMenu()
+    {
+        system("cls");
+        std::cout << title << std::endl;
+        for (size_t i = 0; i < MenuOptions.size(); ++i)
+        {
+            std::cout << i << ". " << MenuOptions[i].first << std::endl;
+        }
+    }
+    void f_chooseOption()
+    {
+        int option;
+        std::cout << "Wybor: ";
+        option = f_limitedInputNumber(0, MenuOptions.size() - 1);
+        MenuOptions[option].second();
+    }
+};
 
 int main()
 {
     RandomNumberGenerator test = RandomNumberGenerator::get();
 
+    Menu* menu1 = new Menu("Wybierz metode generowania liczb pseudolosowych");
+    menu1->f_addMenuOption("Liniowa metoda kongruencyjna", [&test]() { test.f_generateRandomNumbers(); });
+    menu1->f_addMenuOption("Addytywna metoda kongruencyjna", [&test]() { test.f_generateWithAdditiveCongruentMethod(); });
 
-    test.f_generateRandomNumbers();
-    test.f_displayGeneratedNumbers();
-    test.f_saveGeneratedNumbersInFile();
-    test.f_displayParameters();
-    test.f_displayGeneratedNumbers();
-    test.f_saveGeneratedNumbersInFile();
+    Menu* menu2 = new Menu("Wybierz sposob wyswietlania wynikow");
+    menu2->f_addMenuOption("Wyswietl w konsoli", [&test]() { test.f_displayGeneratedNumbers(); });
+    menu2->f_addMenuOption("Zapisz w pliku tekstowym", [&test]() { test.f_saveGeneratedNumbersInFile(); });
+
+    menu1->f_displayMenu();
+    menu1->f_chooseOption();
+    menu2->f_displayMenu();
+    menu2->f_chooseOption();
+
     return 0;
 }
